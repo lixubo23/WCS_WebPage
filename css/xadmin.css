@@ -513,7 +513,7 @@ table th, table td {
     font-size: 14px;
 }
 .x-admin-sm .layui-layer-title,.x-admin-sm .layui-layer-dialog .layui-layer-content{
-    font-size: 12px;
+    font-size: 20px;
 }
 .x-admin-sm .layui-input,.x-admin-sm .layui-select,.x-admin-sm .layui-textarea{
     height: 30px;

@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html class="x-admin-sm">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ZC系统管理</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <!--<meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />-->
+    <link rel="stylesheet" href="./css/font.css">
+    <link rel="stylesheet" href="./css/xadmin.css">
+    <link rel="stylesheet" href="./css/layer.css">
+    <script src="./lib/layui/layui.js" charset="utf-8"></script>
+    <script src="./lib/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./js/xadmin.js"></script>
+</head>
+
+<body>
+    <div class="layui-fluid">
+        <div class="layui-row layui-col-space15">
+            <div class="layui-col-md12">
+                <div class="layui-card">
+                    <div class="layui-card-body ">
+                        <form class="layui-form layui-col-space5">
+                            <!--<div class="layui-inline layui-show-xs-block">-->
+                            <!--<input type="text" id="" name="" placeholder="请填写Robot类型：0(AGV)或1(无人叉车)" autocomplete="off" class="layui-input">-->
+                            <!--</div>-->
+                            <div class="layui-input-inline layui-show-xs-block">
+                                <input type="text" name="username" placeholder="请输入载体编号" autocomplete="off"
+                                    class="layui-input" id="UnitID" style="font-size: 20px;"></div>
+                            <div class="layui-input-inline layui-show-xs-block" style="font-size: 20px;">
+                                <select id="Location" name="Location">
+                                    <option value="">Location</option>
+                                    <option value="G">托盘库</option>
+                                    <option value="B">料箱库</option>
+                                </select>
+                            </div>
+                            <div class="layui-input-inline layui-show-xs-block" style="font-size: 20px;">
+                                <select id="TaskType"" name=" TaskType">
+                                    <option value="">TaskType</option>
+                                    <option value="4">入库任务</option>
+                                    <option value="5">出库任务</option>
+                                    <option value="6">移库任务</option>
+                                    <option value="7">任务撤销</option>
+                                    <option value="44">双重改址</option>
+                                </select>
+                            </div>
+                            <div class="layui-input-inline layui-show-xs-block" style="font-size: 20px;">
+                                <select id="FromLocation" name="FromLocation">
+                                    <option value="">FromLocation</option>
+                                    <option value="InPort01">入库口1</option>
+                                    <option value="Inport02">入库口2</option>
+                                    <option value="PickPort01">拣选口1</option>
+                                    <option value="PickPort02">拣选口2</option>
+                                    <option value="PickPort03">拣选口3</option>
+                                    <option value="PickPort04">拣选口4</option>
+                                    <option value="PickPort05">拣选口5</option>
+                                    <option value="PickPort06">拣选口6</option>
+                                </select>
+                            </div>
+                            <div class="layui-input-inline layui-show-xs-block" style="font-size: 20px;">
+                                <select id="Row" name="Row">
+                                    <option value="">Row</option>
+                                    <option value="01">1排</option>
+                                    <option value="02">2排</option>
+                                    <option value="03">3排</option>
+                                    <option value="04">4排</option>
+                                    <option value="05">5排</option>
+                                    <option value="06">6排</option>
+                                </select>
+                            </div>
+                            <div class="layui-input-inline layui-show-xs-block" style="font-size: 20px;">
+                                <select id="Line" name="Line">
+                                    <option value="">Line</option>
+                                    <option value="01">1大列</option>
+                                    <option value="02">2大列</option>
+                                    <option value="03">3大列</option>
+                                    <option value="04">4大列</option>
+                                    <option value="05">5大列</option>
+                                    <option value="06">6大列</option>
+                                    <option value="07">7大列</option>
+                                    <option value="08">8大列</option>
+                                    <option value="09">9大列</option>
+                                    <option value="10">10大列</option>
+                                    <option value="11">11大列</option>
+                                    <option value="12">12大列</option>
+                                    <option value="13">13大列</option>
+                                    <option value="14">14大列</option>
+                                    <option value="15">15大列</option>
+                                    <option value="16">16大列</option>
+                                    <option value="17">17大列</option>
+                                    <option value="18">18大列</option>
+                                    <option value="19">19大列</option>
+                                    <option value="20">20大列</option>
+                                    <option value="21">21大列</option>
+                                    <option value="22">22大列</option>
+                                    <option value="23">23大列</option>
+                                    <option value="24">24大列</option>
+                                </select>
+                            </div>
+                            <div class="layui-input-inline layui-show-xs-block" style="font-size: 20px;">
+                                <select id="MinorLine" name="MinorLine">
+                                    <option value="">MinorLine</option>
+                                    <option value="01">1小列</option>
+                                    <option value="02">2小列</option>
+                                    <option value="03">3小列</option>
+                                    <option value="03">4小列</option>
+                                </select>
+                            </div>
+                            <div class="layui-input-inline layui-show-xs-block" style="font-size: 20px;">
+                                <select id="Floor" name="Floor">
+                                    <option value="">Floor</option>
+                                    <option value="01">1层</option>
+                                    <option value="02">2层</option>
+                                    <option value="03">3层</option>
+                                    <option value="04">4层</option>
+                                    <option value="05">5层</option>
+                                    <option value="06">6层</option>
+                                    <option value="07">7层</option>
+                                    <option value="08">8层</option>
+                                    <option value="09">9层</option>
+                                    <option value="10">10层</option>
+                                    <option value="11">11层</option>
+                                    <option value="12">12层</option>
+                                    <option value="13">13层</option>
+                                    <option value="14">14层</option>
+                                    <option value="15">15层</option>
+                                    <option value="16">16层</option>
+                                    <option value="17">17层</option>
+                                    <option value="18">18层</option>
+                                    <option value="19">19层</option>
+                                    <option value="20">20层</option>
+                                    <option value="21">21层</option>
+                                    <option value="22">22层</option>
+                                    <option value="23">23层</option>
+                                    <option value="24">24层</option>
+                                    <option value="25">25层</option>
+                                    <option value="26">26层</option>
+                                    <option value="27">27层</option>
+                                    <option value="28">28层</option>
+                                </select>
+                            </div>
+                            <div class="layui-input-inline layui-show-xs-block">
+                                <input type="text" name="username" placeholder="UnitInfo" autocomplete="off"
+                                    class="layui-input" id="UnitInfo" style="font-size: 20px;">
+                            </div>
+                            <div class="search-term">
+                                <a class="layui-btn" data-type="reload" style="font-size: 20px;" onclick="submit()"><i
+                                        class="icon iconfont" style="font-size: 20px;">&#xe842;</i>&nbsp&nbsp下发指令</a>
+                                <a class="layui-btn" data-type="reset" style="font-size: 20px;" onclick="reset()"><i
+                                        class="icon iconfont" style="font-size: 20px;">&#xe6aa;</i>&nbsp&nbsp重置</a>
+                            </div>
+                            <div class="layui-input-inline layui-show-xs-block">
+                                <input type="text" name="username" placeholder="" autocomplete="off" class="layui-input"
+                                    id="SSJDBValue" style="font-size: 20px;">
+                            </div>
+                            <div class="layui-input-inline layui-show-xs-block" style="font-size: 20px;">
+                                <select id="SSJSymbol" name="SSJSymbol">
+                                    <option value="">SSJSymbol</option>
+                                    <option value="SSJ01">SSJ01</option>
+                                    <option value="SSJ02">SSJ02</option>
+                                </select>
+                            </div>
+                            <div class="search-term">
+                                <a class="layui-btn" data-type="reload" style="font-size: 20px;" onclick="SSJ()"><i
+                                        class="icon iconfont" style="font-size: 20px;">&#xe842;</i>&nbsp&nbspSSJ</a>
+                            </div>
+                            <div class="layui-input-inline layui-show-xs-block">
+                                <textarea rows="8" ,cols="30" name="username" placeholder="" autocomplete="off"
+                                    class="layui-input" id="DDJDBValue"
+                                    style="font-size: 20px;height: 80px;"></textarea>
+                            </div>
+                            <div class="layui-input-inline layui-show-xs-block" style="font-size: 20px;">
+                                <select id="DDJSymbol" name="DDJSymbol">
+                                    <option value="">DDJSymbol</option>
+                                    <option value="DDJ01">DDJ01</option>
+                                    <option value="DDJ02">DDJ02</option>
+                                    <option value="DDJ03">DDJ03</option>
+                                    <option value="DDJ04">DDJ04</option>
+                                    <option value="DDJ05">DDJ05</option>
+                                    <option value="DDJ06">DDJ06</option>
+                                </select>
+                            </div>
+                            <div class="search-term">
+                                <a class="layui-btn" data-type="reload" style="font-size: 20px;" onclick="DDJ()"><i
+                                        class="icon iconfont" style="font-size: 20px;">&#xe842;</i>&nbsp&nbspDDJ</a>
+                            </div>
+                    </div>
+                    </form>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+<script>
+    layui.use('laydate',
+        function () {
+            var laydate = layui.laydate;
+
+            //执行一个laydate实例
+            laydate.render({
+                elem: '#start' //指定元素
+            });
+
+            //执行一个laydate实例
+            laydate.render({
+                elem: '#end' //指定元素
+            });
+
+        });
+</script>
+
+<script>
+    layui.use('table', function () {
+        var $ = layui.$,
+            form = layui.form;
+        var taskState = $('#taskState');
+        var taskType = $('#taskType');
+        var start = $('#start');
+        var end = $('#end');
+        var text = $('#text');
+        var table = layui.table;
+        //渲染
+        table.render({
+            elem: '#job',
+            height: 'full-200',
+            //headers: {"token":'Access-Control-Allow-Origin: *'},
+            //url: appname+'/api/rec_webpagedata', //数据接口 
+            url: 'http://localhost:5002/api/webssjtasks',
+            parseData: function (res) { //res 即为原始返回的数据
+                console.log(res);
+                //console.log(res.returnCode);
+                if (res.returnCode == -2) {
+                    parent.location.href = "./index.html";
+                    return;
+                }
+                return {
+                    "code": res.returnCode, //解析接口状态
+                    "msg": res.returnMsg, //解析提示文本
+                    "count": res.total, //解析数据长度
+                    "data": res.data //解析数据列表
+                };
+            },
+            page: true, //开启分页
+            done: function (res, curr, count) {
+                _current_page = curr;
+            },
+            limit: 15, //每页默认显示的数量
+            limits: [10, 15, 20, 30, 40, 50], //每页条数的选择项，默认：[10,20,30,40,50,60,70,80,90]。
+            method: 'POST', //laui 修改请求方式
+            dataType: 'json',
+            contentType: "application/json",
+            request: {
+                pageName: 'currentPage', //页码的参数名称，默认：page
+                limitName: 'pageSize' //每页数据量的参数名，默认：limit
+            },
+            where: {
+                taskType: taskType.val(),
+                taskState: taskState.val(),
+                start: start.val(),
+                end: end.val(),
+                text: text.val()
+            },
+            cols: [
+                [ //表头
+                    {
+                        field: 'id',
+                        type: 'checkbox',
+                        width: 40,
+                        fixed: 'center',
+                        align: 'center'
+                    },
+                    // {field: 'id',width:100, title: 'ID', sort: false},
+                    {
+                        field: 'DataGuid',
+                        width: 270,
+                        title: '任务ID'
+                    },
+                    // {field: 'jobID',width:170, title: '订单任务ID'},
+                    // {field: 'robotType', title: 'Robot类型', templet:function (res) {
+                    //         if(res.robotType==1){return 'AGV'}
+                    //         if(res.robotType==2){return '无人叉车'}
+                    //         if(res.robotType==3){return 'CTU'}
+                    //     }},
+                    {
+                        field: 'TaskFrom',
+                        width: 80,
+                        title: '任务来源'
+                    },
+                    {
+                        field: 'TaskType',
+                        width: 80,
+                        title: '任务类型',
+                        templet: function (res) {
+                            if (res.TaskType == "A") {
+                                return '入库任务'
+                            }
+                            if (res.TaskType == "B") {
+                                return '出库任务'
+                            }
+                        }
+                    },
+                    {
+                        field: 'SSJSymbol',
+                        width: 80,
+                        title: '输送机ID'
+                    },
+                    {
+                        field: 'UnitID',
+                        width: 90,
+                        title: '载体编号'
+                    },
+                    {
+                        field: 'FromLocation',
+                        width: 70,
+                        title: '起始点'
+                    },
+                    {
+                        field: 'ToLocation',
+                        width: 60,
+                        title: '终点'
+                    },
+                    {
+                        field: 'TaskState',
+                        width: 80,
+                        title: '任务状态',
+                        templet: function (res) {
+                            if (res.TaskState == "N") {
+                                return '未完成'
+                            }
+                            if (res.TaskState == "Y") {
+                                return '已完成'
+                            }
+                        }
+                    },
+                    {
+                        field: 'RackChannel',
+                        width: 80,
+                        title: '巷道编号'
+                    },
+                    {
+                        field: 'WMSTaskType',
+                        width: 110,
+                        title: 'WMS任务类型'
+                    },
+                    {
+                        field: 'WMSUnitID',
+                        width: 100,
+                        title: 'WMS载体号'
+                    },
+                    {
+                        field: 'WMSFromLocation',
+                        width: 100,
+                        title: 'WMS起始点'
+                    },
+                    {
+                        field: 'WMSLocation',
+                        width: 90,
+                        title: 'WMS终点'
+                    },
+                    {
+                        field: 'WMSUnitInfo',
+                        width: 120,
+                        title: 'WMS载体信息'
+                    },
+                    // {field: 'statusMsg', title: '任务状态'},
+                    //{field:'createTime',width:150, title:'创建时间', templet: function(d){
+                    // return layui.util.toDateString(d.createTime, 'yyyy-MM-dd HH:mm:ss');
+                    //}},
+                    {
+                        field: 'CreatDateTime',
+                        width: 150,
+                        title: '创建时间',
+                    },
+                    //{
+                    //  field: 'WmsTaskID',
+                    //title: 'WMS任务ID'
+                    //},
+                    // {
+                    // title: '操作',
+                    // width: 180,
+                    // align: 'left',
+                    // toolbar: '#barBody'
+                    // }
+                ]
+            ]
+        });
+
+        //表体监听事件
+        table.on('tool(job-filter)', function (obj) { //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
+            var data = obj.data; //获得当前行数据
+            var layEvent = obj.event; //获得 lay-event 对应的值（也可以是表头的 event 参数对应的值）
+            var tr = obj.tr; //获得当前行 tr 的DOM对象
+
+            if (layEvent == 'detail') { //查看
+                //do somehing
+                //layer.msg(JSON.stringify(data)) ;
+                //xadmin.open('查看','./job-view.html?id='+data.id,400,220);
+            } else if (layEvent == 'delete') { //删除
+                layer.confirm('确定删除吗？', function (index) {
+                    var ids = [data.id];
+                    del(table, ids);
+                });
+            } else if (layEvent == 'edit') { //编辑
+                var status = [data.status];
+                if (status != 5) {
+                    layer.msg('该任务无需重试', {
+                        icon: 4
+                    });
+                    return;
+                }
+
+                var ids = [data.id];
+                reset(table, ids);
+            } else if (layEvent == 'cancel') { //取消
+                layer.confirm('确定取消吗？', function (index) {
+                    var ids = [data.id];
+                    cancel(table, ids);
+                });
+            }
+        });
+
+        var $ = layui.$,
+            active = {
+                reload: function () {
+                    var taskState = $('#taskState');
+                    var taskType = $('#taskType');
+                    var start = $('#start');
+                    var end = $('#end');
+                    var text = $('#text');
+                    table.reload('job', {
+                        page: {
+                            curr: 1 //重新从第一页开始
+                        },
+                        where: {
+                            taskType: taskType.val(),
+                            taskState: taskState.val(),
+                            start: start.val(),
+                            end: end.val(),
+                            text: text.val()
+                        },
+                        url: 'http://localhost:5002/api/webssjtasks',
+                        dataType: 'json',
+                        contentType: "application/json",
+                        //headers: {"token": token},
+                        method: 'POST'
+                    });
+                }
+            };
+
+        $('.demoTable .layui-btn').on('click', function () {
+            var type = $(this).data('type');
+            active[type] ? active[type].call(this) : '';
+        });
+
+    });
+
+    function reset() {
+        $("#UnitID").val(null).trigger("change");
+        $("#TaskType").val("");
+        $("#FromLocation").val(null);
+        $("#Row").val(null);
+        $("#Line").val(null);
+        $("#MinorLine").val(null);
+        $("#Floor").val(null);
+        $("#UnitInfo").val(null);
+        $("#Location").val(null);
+        layui.form.render();
+    }
+
+    function submit() {
+        var UnitID = $('#UnitID');
+        var FromLocation = $('#FromLocation');
+        var TaskType = $('#TaskType');
+        var Row = $('#Row');
+        var Line = $('#Line');
+        var MinorLine = $('#MinorLine');
+        var Floor = $('#Floor');
+        var UnitInfo = $('#UnitInfo');
+        var Location = $('#Location');
+        $.ajax({
+            url: 'http://localhost:5002/api/websinglewmstask',
+            type: 'POST',
+            cache: false,
+            dataType: "text",
+            data: JSON.stringify({
+                "UnitID": UnitID.val(),
+                "TaskType": TaskType.val(),
+                "FromLocation": FromLocation.val(),
+                "Row": Row.val(),
+                "Line": Line.val(),
+                "MinorLine": MinorLine.val(),
+                "Floor": Floor.val(),
+                "UnitInfo": UnitInfo.val(),
+                "Location": Location.val()
+            }),
+            contentType: 'application/json',
+            success: function (result) {
+                layer.msg(result);
+            },
+            error: function (result) {
+                layer.msg("下发指令失败！");
+            }
+
+
+        })
+    }
+
+    function SSJ() {
+        var DBValue = $('#SSJDBValue');
+        var SSJSymbol = $('#SSJSymbol');
+        $.ajax({
+            url: 'http://localhost:5002/api/websinglessj',
+            type: 'POST',
+            cache: false,
+            dataType: "text",
+            data: JSON.stringify({
+                "DBValue": DBValue.val(),
+                "SSJSymbol": SSJSymbol.val()
+            }),
+            contentType: 'application/json',
+            success: function (result) {
+                layer.msg(result);
+            },
+            error: function (result) {
+                layer.msg("下发指令失败！");
+            }
+        })
+    }
+
+    function DDJ() {
+        var DBValue = $('#DDJDBValue');
+        var SSJSymbol = $('#DDJSymbol');
+        $.ajax({
+            url: 'http://localhost:5002/api/websingleddj',
+            type: 'POST',
+            cache: false,
+            dataType: "text",
+            data: JSON.stringify({
+                "DBValue": DBValue.val(),
+                "DDJSymbol": SSJSymbol.val()
+            }),
+            contentType: 'application/json',
+            success: function (result) {
+                layer.msg(result);
+            },
+            error: function (result) {
+                layer.msg("下发指令失败！");
+            }
+        })
+    }
+</script>
+
+<!-- <script type="text/html" id="barBody"> -->
+<!--<a class="" lay-event="detail"><i class="layui-icon">&#xe63c;</i></a>-->
+<!-- <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="delete"><i class="layui-icon">&#xe640;</i>删除</a> -->
+<!-- <a class="layui-btn layui-btn-xs" lay-event="cancel"><i class="layui-icon">&#xe63c;</i>取消</a> -->
+<!-- </script> -->
+
+<script type="text/html" id="createDateTpl">
+    {{layui.util.toDateString(d.createTime, 'yyyy-MM-dd HH:mm:ss')}}
+</script>
+
+</html>

@@ -1,11 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="x-admin-sm">
     <head>
         <meta charset="UTF-8">
-        <title>卧龙WOLONG</title>
+        <title>正昌ZC</title>
         <meta name="renderer" content="webkit|ie-comp|ie-stand">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
+        <!--<meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />-->
         <meta http-equiv="Cache-Control" content="no-siteapp" />
         <link rel="stylesheet" href="./css/font.css">
         <link rel="stylesheet" href="./css/xadmin.css">
@@ -26,7 +26,7 @@
         <!-- 顶部开始 -->
         <div class="container">
             <div class="logo">
-                <a href="./index.html">卧龙WOLONG</a></div>
+                <a href="./index.html">正昌WCS系统</a></div>
             <div class="left_open">
                 <a><i title="展开左侧栏" class="iconfont">&#xe699;</i></a>
             </div>
@@ -36,10 +36,10 @@
                     <dl class="layui-nav-child">
                         <!-- 二级菜单 -->
                         <dd>
-                            <a onclick="xadmin.open('最大化','http://www.baidu.com','','',true)">
+                            <a onclick="xadmin.open('最大化','carton.html','','',true)">
                                 <i class="iconfont">&#xe6a2;</i>弹出最大化</a></dd>
                         <dd>
-                            <a onclick="xadmin.open('弹出自动宽高','http://www.baidu.com')">
+                            <a onclick="xadmin.open('弹出自动宽高','carton.html')">
                                 <i class="iconfont">&#xe6a8;</i>弹出自动宽高</a></dd>
                         <dd>
                             <a onclick="xadmin.open('弹出指定宽高','http://www.baidu.com',500,300)">
@@ -55,7 +55,7 @@
             </ul>
             <ul class="layui-nav right" lay-filter="">
                 <li class="layui-nav-item">
-                    <a href="javascript:;">admin</a>
+                    <a href="javascript:;"><img src="/timg.jpeg" class="layui-nav-img">管理员</a>
                     <dl class="layui-nav-child">
                         <!-- 二级菜单 -->
                         <dd>
@@ -78,176 +78,79 @@
                 <ul id="nav">
                     <li>
                         <a href="javascript:;">
-                            <i class="iconfont left-nav-li" lay-tips="会员管理">&#xe6b8;</i>
-                            <cite>会员管理</cite>
-                            <i class="iconfont nav_right">&#xe697;</i></a>
-                        <ul class="sub-menu">
-                            <li>
-                                <a onclick="xadmin.add_tab('统计页面','.html')">
-                                    <i class="iconfont">&#xe6a7;</i>
-                                    <cite>统计页面</cite></a>
-                            </li>
-                            <li>
-                                <a onclick="xadmin.add_tab('会员列表(静态表格)','member-list.html')">
-                                    <i class="iconfont">&#xe6a7;</i>
-                                    <cite>会员列表(静态表格)</cite></a>
-                            </li>
-                            <li>
-                                <a onclick="xadmin.add_tab('会员列表(动态表格)','member-list1.html',true)">
-                                    <i class="iconfont">&#xe6a7;</i>
-                                    <cite>会员列表(动态表格)</cite></a>
-                            </li>
-                            <li>
-                                <a onclick="xadmin.add_tab('会员删除','member-del.html')">
-                                    <i class="iconfont">&#xe6a7;</i>
-                                    <cite>会员删除</cite></a>
-                            </li>
-                            <li>
-                                <a href="javascript:;">
-                                    <i class="iconfont">&#xe70b;</i>
-                                    <cite>会员管理</cite>
-                                    <i class="iconfont nav_right">&#xe697;</i></a>
-                                <ul class="sub-menu">
-                                    <li>
-                                        <a onclick="xadmin.add_tab('会员删除','member-del.html')">
-                                            <i class="iconfont">&#xe6a7;</i>
-                                            <cite>会员删除</cite></a>
-                                    </li>
-                                    <li>
-                                        <a onclick="xadmin.add_tab('等级管理','member-list1.html')">
-                                            <i class="iconfont">&#xe6a7;</i>
-                                            <cite>等级管理</cite></a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="javascript:;">
-                            <i class="iconfont left-nav-li" lay-tips="WCS任务表">&#xe723;</i>
+                            <i class="iconfont left-nav-li" lay-tips="WCS任务表">&#xe6a0;</i>
                             <cite>WCS任务</cite>
                             <i class="iconfont nav_right">&#xe697;</i></a>
                         <ul class="sub-menu">
                             <li>
-                                <a onclick="xadmin.add_tab('WCS任务Alive','order-list.html')">
+                                <a onclick="xadmin.add_tab('输送机任务','SSJTaskLive.html')">
                                     <i class="iconfont">&#xe6a7;</i>
-                                    <cite>WCS当前任务</cite></a>
+                                    <cite>输送机当前任务</cite></a>
                             </li>
                             <li>
-                                <a onclick="xadmin.add_tab('WCS任务Done','order-list copy.html')">
+                                <a onclick="xadmin.add_tab('堆垛机任务','DDJTaskLive.html')">
                                     <i class="iconfont">&#xe6a7;</i>
-                                    <cite>WCS历史任务</cite></a>
-                            </li>
-                            <li>
-                                <a onclick="xadmin.add_tab('CTU','ctu.html')">
-                                    <i class="iconfont">&#xe6a7;</i>
-                                    <cite>CTU</cite></a>
+                                    <cite>堆垛机当前任务</cite></a>
                             </li>
                         </ul>
                     </li>
                     <li>
                         <a href="javascript:;">
-                            <i class="iconfont left-nav-li" lay-tips="分类管理">&#xe723;</i>
-                            <cite>分类管理</cite>
+                            <i class="iconfont left-nav-li" lay-tips="WCS日志表">&#xe6a2</i>
+                            <cite>WCS日志</cite>
                             <i class="iconfont nav_right">&#xe697;</i></a>
                         <ul class="sub-menu">
                             <li>
-                                <a onclick="xadmin.add_tab('多级分类','cate.html')">
+                                <a onclick="xadmin.add_tab('WMS->WCSLog','WMStoWCS.html')">
                                     <i class="iconfont">&#xe6a7;</i>
-                                    <cite>多级分类</cite></a>
+                                    <cite>WMS->WCS</cite></a>
+                            </li>
+                            <li>
+                                <a onclick="xadmin.add_tab('WMS->WCSLog','WMStoWCS.html')">
+                                    <i class="iconfont">&#xe6a7;</i>
+                                    <cite>WCS->WMS</cite></a>
+                            </li>
+                            <li>
+                                <a onclick="xadmin.add_tab('DB3004Log','DB3004Log.html')">
+                                    <i class="iconfont">&#xe6a7;</i>
+                                    <cite>WCS->PLCDB3004</cite></a>
+                            </li>
+                            <li>
+                                <a onclick="xadmin.add_tab('DB3005Log','DB3005Log.html')">
+                                    <i class="iconfont">&#xe6a7;</i>
+                                    <cite>PLCDB3005->WCS</cite></a>
+                            </li>
+                            <li>
+                                <a onclick="xadmin.add_tab('DB3006Log','DDJTaskLive.html')">
+                                    <i class="iconfont">&#xe6a7;</i>
+                                    <cite>PLCDB3006->WCS</cite></a>
                             </li>
                         </ul>
                     </li>
                     <li>
                         <a href="javascript:;">
-                            <i class="iconfont left-nav-li" lay-tips="城市联动">&#xe723;</i>
-                            <cite>城市联动</cite>
+                            <i class="iconfont left-nav-li" lay-tips="WCS信息表">&#xe744;</i>
+                            <cite>WCS信息</cite>
                             <i class="iconfont nav_right">&#xe697;</i></a>
                         <ul class="sub-menu">
                             <li>
-                                <a onclick="xadmin.add_tab('三级地区联动','city.html')">
+                                <a onclick="xadmin.add_tab('PLC配置信息','WMStoWCS.html')">
                                     <i class="iconfont">&#xe6a7;</i>
-                                    <cite>三级地区联动</cite></a>
+                                    <cite>PLC配置信息</cite></a>
+                            </li>
+                            <li>
+                                <a onclick="xadmin.add_tab('输送机地址信息','DB3004Log.html')">
+                                    <i class="iconfont">&#xe6a7;</i>
+                                    <cite>输送机地址信息</cite></a>
+                            </li>
+                            <li>
+                                <a onclick="xadmin.add_tab('立体库货位表','DB3005Log.html')">
+                                    <i class="iconfont">&#xe6a7;</i>
+                                    <cite>立体库货位表</cite></a>
                             </li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="javascript:;">
-                            <i class="iconfont left-nav-li" lay-tips="管理员管理">&#xe726;</i>
-                            <cite>管理员管理</cite>
-                            <i class="iconfont nav_right">&#xe697;</i></a>
-                        <ul class="sub-menu">
-                            <li>
-                                <a onclick="xadmin.add_tab('管理员列表','admin-list.html')">
-                                    <i class="iconfont">&#xe6a7;</i>
-                                    <cite>管理员列表</cite></a>
-                            </li>
-                            <li>
-                                <a onclick="xadmin.add_tab('角色管理','admin-role.html')">
-                                    <i class="iconfont">&#xe6a7;</i>
-                                    <cite>角色管理</cite></a>
-                            </li>
-                            <li>
-                                <a onclick="xadmin.add_tab('权限分类','admin-cate.html')">
-                                    <i class="iconfont">&#xe6a7;</i>
-                                    <cite>权限分类</cite></a>
-                            </li>
-                            <li>
-                                <a onclick="xadmin.add_tab('权限管理','admin-rule.html')">
-                                    <i class="iconfont">&#xe6a7;</i>
-                                    <cite>权限管理</cite></a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="javascript:;">
-                            <i class="iconfont left-nav-li" lay-tips="系统统计">&#xe6ce;</i>
-                            <cite>系统统计</cite>
-                            <i class="iconfont nav_right">&#xe697;</i></a>
-                        <ul class="sub-menu">
-                            <li>
-                                <a onclick="xadmin.add_tab('拆线图','echarts1.html')">
-                                    <i class="iconfont">&#xe6a7;</i>
-                                    <cite>拆线图</cite></a>
-                            </li>
-                            <li>
-                                <a onclick="xadmin.add_tab('拆线图','echarts2.html')">
-                                    <i class="iconfont">&#xe6a7;</i>
-                                    <cite>拆线图</cite></a>
-                            </li>
-                            <li>
-                                <a onclick="xadmin.add_tab('地图','echarts3.html')">
-                                    <i class="iconfont">&#xe6a7;</i>
-                                    <cite>地图</cite></a>
-                            </li>
-                            <li>
-                                <a onclick="xadmin.add_tab('饼图','echarts4.html')">
-                                    <i class="iconfont">&#xe6a7;</i>
-                                    <cite>饼图</cite></a>
-                            </li>
-                            <li>
-                                <a onclick="xadmin.add_tab('雷达图','echarts5.html')">
-                                    <i class="iconfont">&#xe6a7;</i>
-                                    <cite>雷达图</cite></a>
-                            </li>
-                            <li>
-                                <a onclick="xadmin.add_tab('k线图','echarts6.html')">
-                                    <i class="iconfont">&#xe6a7;</i>
-                                    <cite>k线图</cite></a>
-                            </li>
-                            <li>
-                                <a onclick="xadmin.add_tab('热力图','echarts7.html')">
-                                    <i class="iconfont">&#xe6a7;</i>
-                                    <cite>热力图</cite></a>
-                            </li>
-                            <li>
-                                <a onclick="xadmin.add_tab('仪表图','echarts8.html')">
-                                    <i class="iconfont">&#xe6a7;</i>
-                                    <cite>仪表图</cite></a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
+                    <!-- <li>
                         <a href="javascript:;">
                             <i class="iconfont left-nav-li" lay-tips="图标字体">&#xe6b4;</i>
                             <cite>图标字体</cite>
@@ -259,8 +162,8 @@
                                     <cite>图标对应字体</cite></a>
                             </li>
                         </ul>
-                    </li>
-                    <li>
+                    </li> -->
+                    <!-- <li>
                         <a href="javascript:;">
                             <i class="iconfont left-nav-li" lay-tips="其它页面">&#xe6b4;</i>
                             <cite>其它页面</cite>
@@ -330,7 +233,7 @@
                                     <cite>notice 通知控件</cite></a>
                             </li>
                         </ul>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </div>
@@ -341,7 +244,7 @@
             <div class="layui-tab tab" lay-filter="xbs_tab" lay-allowclose="false">
                 <ul class="layui-tab-title">
                     <li class="home">
-                        <i class="layui-icon">&#xe68e;</i>我的桌面</li></ul>
+                        <i class="layui-icon">&#xe68e;</i>首页</li></ul>
                 <div class="layui-unselect layui-form-select layui-form-selected" id="tab_right">
                     <dl>
                         <dd data-type="this">关闭当前</dd>
@@ -350,7 +253,7 @@
                 </div>
                 <div class="layui-tab-content">
                     <div class="layui-tab-item layui-show">
-                        <iframe src='./welcome.html' frameborder="0" scrolling="yes" class="x-iframe"></iframe>
+                        <iframe src='./order-list.html' frameborder="0" scrolling="yes" class="x-iframe"></iframe>
                     </div>
                 </div>
                 <div id="tab_show"></div>
