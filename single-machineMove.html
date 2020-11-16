@@ -22,9 +22,6 @@
                 <div class="layui-card">
                     <div class="layui-card-body ">
                         <form class="layui-form layui-col-space5">
-                            <!--<div class="layui-inline layui-show-xs-block">-->
-                            <!--<input type="text" id="" name="" placeholder="请填写Robot类型：0(AGV)或1(无人叉车)" autocomplete="off" class="layui-input">-->
-                            <!--</div>-->
                             <div class="layui-input-inline layui-show-xs-block">
                                 <input type="text" name="username" placeholder="请输入载体编号" autocomplete="off"
                                     class="layui-input" id="UnitID" style="font-size: 20px;"></div>
@@ -45,19 +42,9 @@
                                     <option value="44">双重改址</option>
                                 </select>
                             </div>
-                            <div class="layui-input-inline layui-show-xs-block" style="font-size: 20px;">
-                                <select id="FromLocation" name="FromLocation">
-                                    <option value="">FromLocation</option>
-                                    <option value="InPort001">入库口1</option>
-                                    <option value="InPort002">入库口2</option>
-                                    <option value="PickPort001">拣选口1</option>
-                                    <option value="PickPort002">拣选口2</option>
-                                    <option value="PickPort003">拣选口3</option>
-                                    <option value="PickPort004">拣选口4</option>
-                                    <option value="PickPort005">拣选口5</option>
-                                    <option value="PickPort006">拣选口6</option>
-                                </select>
-                            </div>
+                            <div class="layui-input-inline layui-show-xs-block">
+                                <input type="text" name="username" placeholder="ToLocation" autocomplete="off"
+                                    class="layui-input" id="ToLocation" style="font-size: 20px;"></div>
                             <div class="layui-input-inline layui-show-xs-block" style="font-size: 20px;">
                                 <select id="Row" name="Row">
                                     <option value="">Row</option>
@@ -462,7 +449,7 @@
     function reset() {
         $("#UnitID").val(null).trigger("change");
         $("#TaskType").val("");
-        $("#FromLocation").val(null);
+        $("#ToLocation").val(null);
         $("#Row").val(null);
         $("#Line").val(null);
         $("#MinorLine").val(null);
@@ -474,7 +461,7 @@
 
     function submit() {
         var UnitID = $('#UnitID');
-        var FromLocation = $('#FromLocation');
+        var ToLocation = $('#ToLocation');
         var TaskType = $('#TaskType');
         var Row = $('#Row');
         var Line = $('#Line');
@@ -483,14 +470,14 @@
         var UnitInfo = $('#UnitInfo');
         var Location = $('#Location');
         $.ajax({
-            url: 'http://localhost:5002/api/websinglewmstask',
+            url: 'http://localhost:5002/api/websinglewmstaskmove',
             type: 'POST',
             cache: false,
             dataType: "text",
             data: JSON.stringify({
                 "UnitID": UnitID.val(),
                 "TaskType": TaskType.val(),
-                "FromLocation": FromLocation.val(),
+                "ToLocation": ToLocation.val(),
                 "Row": Row.val(),
                 "Line": Line.val(),
                 "MinorLine": MinorLine.val(),

@@ -2638,7 +2638,7 @@ div#graph1, div#graph4, div#graph5, div#graph6, div#graph7, div#graph8, div#grap
 }
 .market-update-gd {
     float: left;
-    width: 50%;
+    width: 40%;
     margin: 1em 0;
 }
 .market-updates {
@@ -3112,7 +3112,6 @@ div#graph1, div#graph4, div#graph5, div#graph6, div#graph7, div#graph8, div#grap
     padding: 0;
 }
 .market-update-gd {
-    margin: 0.8em 0;
 }
 .market-update-right {
     width: 30%;

@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="./css/xadmin.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/layer.css">
+    <link rel="stylesheet" href="./css/matrix-style.css">
     <script src="./lib/layui/layui.js" charset="utf-8"></script>
     <script type="text/javascript" src="./js/xadmin.js"></script>
     <script type="text/javascript" src="./js/jquery.min.js"></script>
@@ -25,27 +27,26 @@
         }
     </style>
     <script>
-    
         document.onkeydown = cdk;
-    
+
         function cdk() {
             if (event.keyCode == 90 && event.shiftKey) {
                 KeyFuntion1();
             } else if (event.keyCode == 67 && event.shiftKey) {
                 KeyFuntion2();
             }
-    
-    
+
+
             function KeyFuntion1() {
                 var div3 = document.getElementById("div03");
                 var div4 = document.getElementById("div04");
                 var div2 = document.getElementById("div02");
                 var div1 = document.getElementById("div01");
-                 //显示div       
+                //显示div       
                 div1.style.display = "block";
                 div2.style.display = "block";
             }
-    
+
             function KeyFuntion2() {
                 var div3 = document.getElementById("div03");
                 var div4 = document.getElementById("div04");
@@ -59,17 +60,7 @@
 </head>
 
 <body>
-    <div class="x-nav">
-        <span class="layui-breadcrumb">
-            <a href="">首页</a>
-            <a href="">
-                <cite>快捷面板</cite></a>
-        </span>
-        <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right"
-            onclick="location.reload()" title="刷新">
-            <i class="layui-icon layui-icon-refresh" style="line-height:30px"></i>
-        </a>
-    </div>
+
     <section id="main-content">
         <section class="wrapper">
             <!-- //market-->
@@ -100,7 +91,7 @@
                         <div class="clearfix"> </div>
                     </div>
                 </div>
-                <div class="col-md-3 market-update-gd" onclick="xadmin.open('ZC动画','carton.html')">
+                <div class="col-md-3 market-update-gd" onclick="myFuntion1()">
                     <div class="market-update-block clr-block-3">
                         <div class="col-md-4 market-update-right">
                             <i class="icon iconfont">&#xe709;</i>
@@ -126,6 +117,130 @@
                 <div class="clearfix"> </div>
             </div>
             <div class="clearfix"> </div>
+            <div class="agileits-w3layouts-stats">
+                <div class="col-md-6 stats-info widget" id="div03">
+                    <div class="stats-info-agileits">
+                        <div class="stats-title">
+                            <h4 class="title">设备连接状态</h4>
+                        </div>
+                        <div class="stats-body">
+                            <ul class="list-unstyled">
+                                <li style="font-size: large;" id="showlist1">输送机PLC01:10.223.8.80&nbsp&nbsp&nbsp;<span
+                                        class="pull-right" style="font-weight: bold;" id="Span01"></span>
+                                    <div class="progress  progress-striped active progress-right">
+                                        <div class="bar gray" style="width:100%;" id="bar01"></div>
+                                    </div>
+                                </li>
+                                <li style="font-size: large;" id="showlist1">输送机PLC02:10.223.8.81&nbsp&nbsp&nbsp;<span
+                                        class="pull-right" style="font-weight: bold;" id="Span02"></span>
+                                    <div class="progress  progress-striped active progress-right">
+                                        <div class="bar gray" style="width:100%;" id="bar02"></div>
+                                    </div>
+                                </li>
+                                <li style="font-size: large;" id="showlist2">堆垛机PLC01:152.168.3.215<span
+                                        class="pull-right" style="font-weight: bold;" id="Span03"></span>
+                                    <div class="progress  progress-striped active progress-right">
+                                        <div class="bar gray" style="width:100%;" id="bar03"></div>
+                                    </div>
+                                </li>
+                                <li style="font-size: large;" id="showlist2">堆垛机PLC02:152.168.3.216<span
+                                        class="pull-right" style="font-weight: bold;" id="Span04"></span>
+                                    <div class="progress  progress-striped active progress-right">
+                                        <div class="bar gray" style="width:100%;" id="bar04"></div>
+                                    </div>
+                                </li>
+                                <li style="font-size: large;" id="showlist2">堆垛机PLC03:152.168.3.217<span
+                                        class="pull-right" style="font-weight: bold;" id="Span05"></span>
+                                    <div class="progress  progress-striped active progress-right">
+                                        <div class="bar gray" style="width:100%;" id="bar05"></div>
+                                    </div>
+                                </li>
+                                <li style="font-size: large;" id="showlist2">堆垛机PLC04:152.168.3.218<span
+                                        class="pull-right" style="font-weight: bold;" id="Span06"></span>
+                                    <div class="progress  progress-striped active progress-right">
+                                        <div class="bar gray" style="width:100%;" id="bar06"></div>
+                                    </div>
+                                </li>
+                                <li style="font-size: large;" id="showlist2">堆垛机PLC06:152.168.3.219<span
+                                        class="pull-right" style="font-weight: bold;" id="Span07"></span>
+                                    <div class="progress  progress-striped active progress-right">
+                                        <div class="bar gray" style="width:100%;" id="bar07"></div>
+                                    </div>
+                                </li>
+                                <li style="font-size: large;" id="showlist2">堆垛机PLC05:152.168.3.220<span
+                                        class="pull-right" style="font-weight: bold;" id="Span08"></span>
+                                    <div class="progress  progress-striped active progress-right">
+                                        <div class="bar gray" style="width:100%;" id="bar08"></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 stats-info widget">
+                    <div class="stats-info-agileits">
+                        <div class="widget-box">
+                            <div class="widget-title bg_lo" data-toggle="collapse" href="#collapseG3"> <span
+                                    class="icon"> <i class="icon iconfont">&#xe6a6;</i> </span>
+                                <h5>任务动态</h5>
+                            </div>
+                            <div class="widget-content nopadding updates collapse in" id="collapseG3">
+                                <div class="new-update clearfix"><i class="icon iconfont">&#xe6b1;</i>
+                                    <div class="update-done"><a title=""><strong
+                                                style="font-size: 14px; color: green;">托盘G0000231入库成功！</strong></a>
+                                        <span style="font-size: 14px;">2020年11月15日22:36:36</span> </div>
+                                    <div class="update-date"><span class="update-day">15</span>November</div>
+                                </div>
+                                <div class="new-update clearfix"> <i class="icon iconfont">&#xe6b1;</i> <span
+                                        class="update-notice"> <a title=""><strong
+                                                style="font-size: 14px; color: green;">堆垛机取托盘G0000231成功！</strong></a>
+                                        <span style="font-size: 14px;">2020年11月15日22:35:22</span> </span> <span
+                                        class="update-date"><span class="update-day">15</span>November</span> </div>
+                                <div class="new-update clearfix"> <i class="icon iconfont">&#xe6b1;</i> <span
+                                        class="update-alert"> <a title=""><strong
+                                                style="font-size: 14px; color: green;">托盘G0000231到达堆垛机取货口成功！</strong></a>
+                                        <span style="font-size: 14px;">2020年11月15日22:34:38</span> </span> <span
+                                        class="update-date"><span class="update-day">15</span>November</span> </div>
+                                <div class="new-update clearfix"> <i class="icon iconfont">&#xe6b1;</i> <span
+                                        class="update-done"> <a title=""><strong
+                                                style="font-size: 14px; color: green;">托盘G0000231到达输送线入库口成功！</strong></a>
+                                        <span style="font-size: 14px;">2020年11月15日22:33:56</span> </span> <span
+                                        class="update-date"><span class="update-day">15</span>November</span> </div>
+                                <div class="new-update clearfix"> <i class="icon iconfont">&#xe6b1;</i> <span
+                                        class="update-notice"> <a title=""><strong
+                                                style="font-size: 14px; color: green;">WMS下发托盘G0000231入库任务成功！</strong></a>
+                                        <span style="font-size: 14px;">2020年11月15日22:32:07</span> </span> <span
+                                        class="update-date"><span class="update-day">15</span>November</span> </div>
+                                <div class="new-update clearfix"> <i class="icon iconfont">&#xe6b1;</i> <span
+                                        class="update-notice"> <a title=""><strong
+                                                style="font-size: 14px; color: red;">WMS下发托盘G0000231入库任务失败！</strong></a>
+                                        <span style="font-size: 14px;">2020年11月15日22:32:04</span> </span> <span
+                                        class="update-date"><span class="update-day">15</span>November</span> </div>
+                                <div class="new-update clearfix"> <i class="icon iconfont">&#xe6b1;</i> <span
+                                        class="update-notice"> <a title=""><strong
+                                                style="font-size: 14px; color: red;">WMS下发托盘G0000231入库任务失败！</strong></a>
+                                        <span style="font-size: 14px;">2020年11月15日22:32:02</span> </span> <span
+                                        class="update-date"><span class="update-day">15</span>November</span> </div>
+                                        <div class="new-update clearfix"> <i class="icon iconfont">&#xe6b1;</i> <span
+                                            class="update-notice"> <a title=""><strong
+                                                    style="font-size: 14px; color: red;">WMS下发托盘G0000231入库任务失败！</strong></a>
+                                            <span style="font-size: 14px;">2020年11月15日22:32:00</span> </span> <span
+                                            class="update-date"><span class="update-day">15</span>November</span> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"> </div>
+            <div class="agileits-w3layouts-stats">
+                <div class="col-md-12 stats-info stats-last widget-shadow">
+                    <div class="stats-last-agile">
+                        <table class="table stats-table " id="table" style="font-size: 20px; text-align: center;">
+                        </table>
+                    </div>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
             <div class="market-updates" id="div01" style="display: none;">
                 <div class="col-md-3 market-update-gd" onclick="myFuntion()">
                     <div class="market-update-block clr-block-2">
@@ -139,7 +254,7 @@
                         <div class="clearfix"> </div>
                     </div>
                 </div>
-                <div class="col-md-3 market-update-gd" onclick="xadmin.open('堆垛机任务','DDJTaskLive.html')">
+                <div class="col-md-3 market-update-gd" onclick="myFuntion2()">
                     <div class="market-update-block clr-block-1">
                         <div class="col-md-4 market-update-right">
                             <i class="icon iconfont">&#xe82a;</i>
@@ -151,7 +266,7 @@
                         <div class="clearfix"> </div>
                     </div>
                 </div>
-                <div class="col-md-3 market-update-gd" onclick="xadmin.open('ZC动画','carton.html')">
+                <div class="col-md-3 market-update-gd" onclick="myFuntion3">
                     <div class="market-update-block clr-block-3">
                         <div class="col-md-4 market-update-right">
                             <i class="icon iconfont">&#xe828;</i>
@@ -178,7 +293,7 @@
             </div>
             <!-- //market-->
             <!-- //tasks -->
-            <div class="agileits-w3layouts-stats" id="div02" style="display: none;">
+            <!-- <div class="agileits-w3layouts-stats" id="div02" style="display: none;">
                 <div class="col-md-4 stats-info widget" id="div03">
                     <div class="stats-info-agileits">
                         <div class="stats-title">
@@ -275,7 +390,7 @@
                     </div>
                 </div>
                 <div class="clearfix"> </div>
-            </div>
+            </div> -->
         </section>
     </section>
 </body>
@@ -438,86 +553,86 @@
                                 "background-size": "40px 40px"
                             });
                         }
-                        if (Object.values(res[0])[8] == "Connected") {
-                            document.getElementById('Span09').innerHTML = Object.values(res[0])[3] +
-                                "&nbsp&nbsp&nbsp&nbsp&nbsp";
-                            $(document.getElementById("bar09")).css({
-                                background: "#5cb85c",
-                                "background-image": "linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 15%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent",
-                                "background-size": "40px 40px"
-                            });
-                        } else if (Object.values(res[0])[8] == "DisConnected") {
-                            document.getElementById('Span09').innerHTML = Object.values(res[0])[3];
-                            $(document.getElementById("bar09")).css({
-                                background: "#d9534f",
-                                "background-image": "linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 15%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent",
-                                "background-size": "40px 40px"
-                            });
-                        }
-                        if (Object.values(res[0])[9] == "Connected") {
-                            document.getElementById('Span10').innerHTML = Object.values(res[0])[3] +
-                                "&nbsp&nbsp&nbsp&nbsp&nbsp";
-                            $(document.getElementById("bar10")).css({
-                                background: "#5cb85c",
-                                "background-image": "linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 15%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent",
-                                "background-size": "40px 40px"
-                            });
-                        } else if (Object.values(res[0])[9] == "DisConnected") {
-                            document.getElementById('Span10').innerHTML = Object.values(res[0])[3];
-                            $(document.getElementById("bar10")).css({
-                                background: "#d9534f",
-                                "background-image": "linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 15%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent",
-                                "background-size": "40px 40px"
-                            });
-                        }
-                        if (Object.values(res[0])[10] == "Connected") {
-                            document.getElementById('Span11').innerHTML = Object.values(res[0])[3] +
-                                "&nbsp&nbsp&nbsp&nbsp&nbsp";
-                            $(document.getElementById("bar11")).css({
-                                background: "#5cb85c",
-                                "background-image": "linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 15%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent",
-                                "background-size": "40px 40px"
-                            });
-                        } else if (Object.values(res[0])[10] == "DisConnected") {
-                            document.getElementById('Span11').innerHTML = Object.values(res[0])[3];
-                            $(document.getElementById("bar11")).css({
-                                background: "#d9534f",
-                                "background-image": "linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 15%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent",
-                                "background-size": "40px 40px"
-                            });
-                        }
-                        if (Object.values(res[0])[11] == "Connected") {
-                            document.getElementById('Span12').innerHTML = Object.values(res[0])[3] +
-                                "&nbsp&nbsp&nbsp&nbsp&nbsp";
-                            $(document.getElementById("bar12")).css({
-                                background: "#5cb85c",
-                                "background-image": "linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 15%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent",
-                                "background-size": "40px 40px"
-                            });
-                        } else if (Object.values(res[0])[11] == "DisConnected") {
-                            document.getElementById('Span12').innerHTML = Object.values(res[0])[3];
-                            $(document.getElementById("bar12")).css({
-                                background: "#d9534f",
-                                "background-image": "linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 15%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent",
-                                "background-size": "40px 40px"
-                            });
-                        }
-                        if (Object.values(res[0])[12] == "Connected") {
-                            document.getElementById('Span13').innerHTML = Object.values(res[0])[3] +
-                                "&nbsp&nbsp&nbsp&nbsp&nbsp";
-                            $(document.getElementById("bar13")).css({
-                                background: "#5cb85c",
-                                "background-image": "linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 15%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent",
-                                "background-size": "40px 40px"
-                            });
-                        } else if (Object.values(res[0])[12] == "DisConnected") {
-                            document.getElementById('Span13').innerHTML = Object.values(res[0])[3];
-                            $(document.getElementById("bar13")).css({
-                                background: "#d9534f",
-                                "background-image": "linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 15%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent",
-                                "background-size": "40px 40px"
-                            });
-                        }
+                        // if (Object.values(res[0])[8] == "Connected") {
+                        //     document.getElementById('Span09').innerHTML = Object.values(res[0])[3] +
+                        //         "&nbsp&nbsp&nbsp&nbsp&nbsp";
+                        //     $(document.getElementById("bar09")).css({
+                        //         background: "#5cb85c",
+                        //         "background-image": "linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 15%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent",
+                        //         "background-size": "40px 40px"
+                        //     });
+                        // } else if (Object.values(res[0])[8] == "DisConnected") {
+                        //     document.getElementById('Span09').innerHTML = Object.values(res[0])[3];
+                        //     $(document.getElementById("bar09")).css({
+                        //         background: "#d9534f",
+                        //         "background-image": "linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 15%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent",
+                        //         "background-size": "40px 40px"
+                        //     });
+                        // }
+                        // if (Object.values(res[0])[9] == "Connected") {
+                        //     document.getElementById('Span10').innerHTML = Object.values(res[0])[3] +
+                        //         "&nbsp&nbsp&nbsp&nbsp&nbsp";
+                        //     $(document.getElementById("bar10")).css({
+                        //         background: "#5cb85c",
+                        //         "background-image": "linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 15%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent",
+                        //         "background-size": "40px 40px"
+                        //     });
+                        // } else if (Object.values(res[0])[9] == "DisConnected") {
+                        //     document.getElementById('Span10').innerHTML = Object.values(res[0])[3];
+                        //     $(document.getElementById("bar10")).css({
+                        //         background: "#d9534f",
+                        //         "background-image": "linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 15%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent",
+                        //         "background-size": "40px 40px"
+                        //     });
+                        // }
+                        // if (Object.values(res[0])[10] == "Connected") {
+                        //     document.getElementById('Span11').innerHTML = Object.values(res[0])[3] +
+                        //         "&nbsp&nbsp&nbsp&nbsp&nbsp";
+                        //     $(document.getElementById("bar11")).css({
+                        //         background: "#5cb85c",
+                        //         "background-image": "linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 15%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent",
+                        //         "background-size": "40px 40px"
+                        //     });
+                        // } else if (Object.values(res[0])[10] == "DisConnected") {
+                        //     document.getElementById('Span11').innerHTML = Object.values(res[0])[3];
+                        //     $(document.getElementById("bar11")).css({
+                        //         background: "#d9534f",
+                        //         "background-image": "linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 15%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent",
+                        //         "background-size": "40px 40px"
+                        //     });
+                        // }
+                        // if (Object.values(res[0])[11] == "Connected") {
+                        //     document.getElementById('Span12').innerHTML = Object.values(res[0])[3] +
+                        //         "&nbsp&nbsp&nbsp&nbsp&nbsp";
+                        //     $(document.getElementById("bar12")).css({
+                        //         background: "#5cb85c",
+                        //         "background-image": "linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 15%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent",
+                        //         "background-size": "40px 40px"
+                        //     });
+                        // } else if (Object.values(res[0])[11] == "DisConnected") {
+                        //     document.getElementById('Span12').innerHTML = Object.values(res[0])[3];
+                        //     $(document.getElementById("bar12")).css({
+                        //         background: "#d9534f",
+                        //         "background-image": "linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 15%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent",
+                        //         "background-size": "40px 40px"
+                        //     });
+                        // }
+                        // if (Object.values(res[0])[12] == "Connected") {
+                        //     document.getElementById('Span13').innerHTML = Object.values(res[0])[3] +
+                        //         "&nbsp&nbsp&nbsp&nbsp&nbsp";
+                        //     $(document.getElementById("bar13")).css({
+                        //         background: "#5cb85c",
+                        //         "background-image": "linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 15%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent",
+                        //         "background-size": "40px 40px"
+                        //     });
+                        // } else if (Object.values(res[0])[12] == "DisConnected") {
+                        //     document.getElementById('Span13').innerHTML = Object.values(res[0])[3];
+                        //     $(document.getElementById("bar13")).css({
+                        //         background: "#d9534f",
+                        //         "background-image": "linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 15%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent",
+                        //         "background-size": "40px 40px"
+                        //     });
+                        // }
                         document.getElementById('S1').innerHTML = Object.values(res[0])[14]
                         document.getElementById('S2').innerHTML = Object.values(res[0])[13]
                     }
@@ -527,40 +642,78 @@
         }, 10000));
 </script>
 <script>
-    var timer2 = setInterval(function() {
-			$.ajax({
-				type: "post",
-				url: "http://localhost:5002/api/webpagedata",
-				dataType: "json",
-				success: function(data) {
-					console.log(Object.values(data.data[0])[0]);
-					console.log(data);
-					var length = data.total;
-					console.log(length);
-					if (data.returnCode == "0") {
-						$("#table").html("<thead><tr><th>S.NO</th><th>PRODUCT</th><th>STATUS</th></tr></thead>");
-						for (var i = 0; i <= length -1 ; i++) {
-								$("#table").append("<tr><td>" + Object.values(data.data[i])[0] +
-									"</td><td>" + Object.values(data.data[i])[1] +
-									"</td><td>" + Object.values(data.data[i])[2] +
-									"</td><tr>")
-							}
-	
-						};
-	
-					}
-				});
-		},1000);
-	
+    var timer2 = setInterval(function () {
+        $.ajax({
+            type: "post",
+            url: "http://localhost:5002/api/webpagedata",
+            dataType: "json",
+            success: function (data) {
+                console.log(Object.values(data.data[0])[0]);
+                console.log(data);
+                var length = data.total;
+                console.log(length);
+                if (data.returnCode == "0") {
+                    $("#table").html(
+                        "<thead><tr><th>S.NO</th><th>PRODUCT</th><th>STATUS</th></tr></thead>");
+                    for (var i = 0; i <= length - 1; i++) {
+                        $("#table").append("<tr><td>" + Object.values(data.data[i])[0] +
+                            "</td><td>" + Object.values(data.data[i])[1] +
+                            "</td><td>" + Object.values(data.data[i])[2] +
+                            "</td><tr>")
+                    }
+
+                };
+
+            }
+        });
+    }, 1000);
+
     function myFuntion() {
         //iframe层
         layer.open({
             type: 2,
-            title: '单机模拟测试<i class="icon iconfont" style="font-size: 20px;">&#xe6de;</i>',
+            title: '单机入库模拟测试<i class="icon iconfont" style="font-size: 20px;">&#xe6de;</i>',
             shadeClose: false,
             shade: 0.2,
             area: ['455px', '82%'],
             content: 'single-machineIn.html' //iframe的url
+        });
+    }
+
+    function myFuntion2() {
+        //iframe层
+        layer.open({
+            type: 2,
+            title: '单机出库模拟测试<i class="icon iconfont" style="font-size: 20px;">&#xe6de;</i>',
+            shadeClose: false,
+            shade: 0.2,
+            area: ['455px', '82%'],
+            content: 'single-machineOut.html' //iframe的url
+        });
+    }
+
+    function myFuntion3() {
+        //iframe层
+        layer.open({
+            type: 2,
+            title: '单机移库模拟测试<i class="icon iconfont" style="font-size: 20px;">&#xe6de;</i>',
+            shadeClose: false,
+            shade: 0.2,
+            area: ['455px', '82%'],
+            content: 'single-machineMove.html' //iframe的url
+        });
+    }
+
+    function myFuntion1() {
+        //iframe层
+        parent.layer.open({
+            type: 2,
+            title: 'ZC动画<i class="icon iconfont" style="font-size: 20px;">&#xe6de;</i>',
+            shadeClose: false,
+            shade: 0.2,
+            maxmin: true,
+            area: ['1400px', '95%'],
+            content: 'carton.html' //iframe的url
         });
     }
 </script>
