@@ -917,6 +917,10 @@ hr{ border-top-color:#dadada;}
 	border-top: 1px solid #DDDDDD;
 	padding: 10px 12px;
 }
+.new-update:hover{
+	background-color: rgb(250, 237, 222);
+	cursor: pointer;
+}
 .new-update:first-child {
 	border-top: medium none;
 }

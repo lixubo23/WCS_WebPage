@@ -10,6 +10,7 @@
   <meta http-equiv="Cache-Control" content="no-siteapp" />
   <link rel="stylesheet" href="./css/font.css">
   <link rel="stylesheet" href="./css/login.css">
+  <link rel="stylesheet" href="./css/style.css" media="all">
   <link rel="stylesheet" href="./css/xadmin.css">
   <link rel="stylesheet" href="./css/layer.css">
   <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
@@ -26,15 +27,15 @@
 <body class="login-bg">
 
   <div class="login layui-anim layui-anim-up">
-    <div class="message">正昌WCS</div>
+    <div class="message" style="font-size: 24px;">正昌WCS</div>
     <div id="darkbannerwrap"></div>
 
     <form id="form1" method="post" class="layui-form">
-      <input name="username" id="username" placeholder="用户名" type="text" lay-verify="required" class="layui-input" id="loginUser">
+      <input name="username" id="username" placeholder="用户名" type="text" lay-verify="required" class="layui-input">
       <hr class="hr15">
       <input name="password" id="password" lay-verify="required" placeholder="密码" type="password" class="layui-input">
       <hr class="hr15">
-      <input value="登录" lay-submit lay-filter="login" style="width:100%;" type="button" onclick="myFunction()">
+      <input value="登录" lay-submit lay-filter="login" class="login1" style="width:100%;" type="button" onclick="myFunction()">
       <hr class="hr20">
     </form>
   </div>

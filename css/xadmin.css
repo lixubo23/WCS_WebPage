@@ -459,7 +459,21 @@ table th, table td {
 .x-admin-sm .login input[type=file],
 .x-admin-sm .login input[type=password],
 .x-admin-sm .login input[type=email], .x-admin-sm select {
-    font-size: 12px;
+    font-size: 16px;
+    
+    padding: 14px 15px 14px 37px;
+    width: 100%;
+    color: black;
+    outline: none;
+    border: 1px solid #D3D3D3;
+    background: #FFFFFF;
+    margin: 0em 0em 1.5em 0em;
+}
+.x-admin-sm .login #username {
+    background: url(../images/user.png)no-repeat 8px 16px #fff;
+}
+.x-admin-sm .login #password {
+    background: url(../images/lock.png)no-repeat 8px 16px #fff;
 }
 .x-admin-sm .login .message{
     font-size: 14px;

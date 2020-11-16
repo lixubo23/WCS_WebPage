@@ -118,6 +118,7 @@
             </div>
             <div class="clearfix"> </div>
             <div class="agileits-w3layouts-stats">
+                <!-- 设备连接状态界面 -->
                 <div class="col-md-6 stats-info widget" id="div03">
                     <div class="stats-info-agileits">
                         <div class="stats-title">
@@ -177,6 +178,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- 任动态界面 -->
                 <div class="col-md-6 stats-info widget">
                     <div class="stats-info-agileits">
                         <div class="widget-box">
@@ -211,17 +213,17 @@
                                                 style="font-size: 14px; color: green;">WMS下发托盘G0000231入库任务成功！</strong></a>
                                         <span style="font-size: 14px;">2020年11月15日22:32:07</span> </span> <span
                                         class="update-date"><span class="update-day">15</span>November</span> </div>
-                                <div class="new-update clearfix"> <i class="icon iconfont">&#xe6b1;</i> <span
+                                <div class="new-update clearfix"> <i class="icon iconfont">&#xe6b7;</i> <span
                                         class="update-notice"> <a title=""><strong
                                                 style="font-size: 14px; color: red;">WMS下发托盘G0000231入库任务失败！</strong></a>
                                         <span style="font-size: 14px;">2020年11月15日22:32:04</span> </span> <span
                                         class="update-date"><span class="update-day">15</span>November</span> </div>
-                                <div class="new-update clearfix"> <i class="icon iconfont">&#xe6b1;</i> <span
+                                <div class="new-update clearfix"> <i class="icon iconfont">&#xe6b7;</i> <span
                                         class="update-notice"> <a title=""><strong
                                                 style="font-size: 14px; color: red;">WMS下发托盘G0000231入库任务失败！</strong></a>
                                         <span style="font-size: 14px;">2020年11月15日22:32:02</span> </span> <span
                                         class="update-date"><span class="update-day">15</span>November</span> </div>
-                                        <div class="new-update clearfix"> <i class="icon iconfont">&#xe6b1;</i> <span
+                                        <div class="new-update clearfix"> <i class="icon iconfont">&#xe6b7;</i> <span
                                             class="update-notice"> <a title=""><strong
                                                     style="font-size: 14px; color: red;">WMS下发托盘G0000231入库任务失败！</strong></a>
                                             <span style="font-size: 14px;">2020年11月15日22:32:00</span> </span> <span
@@ -232,8 +234,8 @@
                 </div>
             </div>
             <div class="clearfix"> </div>
-            <div class="agileits-w3layouts-stats">
-                <div class="col-md-12 stats-info stats-last widget-shadow">
+            <div class="agileits-w3layouts-stats"id="div02" style="display: none;">
+                <div class="col-md-12 stats-info stats-last widget-shadow" >
                     <div class="stats-last-agile">
                         <table class="table stats-table " id="table" style="font-size: 20px; text-align: center;">
                         </table>
@@ -711,7 +713,7 @@
             title: 'ZC动画<i class="icon iconfont" style="font-size: 20px;">&#xe6de;</i>',
             shadeClose: false,
             shade: 0.2,
-            maxmin: true,
+            maxmin: false,
             area: ['1400px', '95%'],
             content: 'carton.html' //iframe的url
         });

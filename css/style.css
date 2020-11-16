@@ -1163,6 +1163,9 @@ div#graph1,div#graph4,div#graph5,div#graph6,div#graph7,div#graph8,div#graph9 {
     -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
     box-shadow: 0 1px 1px rgba(0,0,0,.05);
 }
+.stats-info-agileits :hover{
+    cursor: pointer;
+}
 .agileits-w3layouts-stats {
     margin: 1.5em 0;
 }
@@ -2512,7 +2515,9 @@ h4 input[type="checkbox"] {
 }
  /*--placeholder-color--*/
 ::-webkit-input-placeholder {
-	color:#fff !important;
+    color:black !important;
+    font-weight: lighter;
+    font-size: 16px;
 }
 :-moz-placeholder { /* Firefox 18- */
 	color:#fff !important; 
@@ -3199,9 +3204,27 @@ div#graph1, div#graph4, div#graph5, div#graph6, div#graph7, div#graph8, div#grap
 .market-update-block :active{
     color: red;
 }
-
 .market-update-block .desgin1{
     border : solid;
     box-shadow: rgb(218, 223, 219);
 
 }
+
+.layui-anim input[type="text"], .layui-anim input[type="password"] {
+    font-size: 1em;
+    padding: 14px 15px 14px 37px;
+    width: 100%;
+    color: #A8A8A8;
+    outline: none;
+    border: 1px solid #D3D3D3;
+    background: #FFFFFF;
+    margin: 0em 0em 1.5em 0em;
+}
+.layui-anim input #username {
+    background: url(../images/user.png)no-repeat 8px 16px rgb(180, 127, 127);
+}
+.layui-anim input #password {
+    background: url(../images/lock.png)no-repeat 8px 16px #fff;
+}
+.login input[type="button"]:hover{
+    background: #337ab7;}
