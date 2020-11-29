@@ -324,10 +324,10 @@
                         width: 110,
                         title: '任务是否可做',
                         templet: function (res) {
-                            if (res.TaskState == "N") {
+                            if (res.TaskCanDo == "N") {
                                 return '不可做'
                             }
-                            if (res.TaskState == "Y") {
+                            if (res.TaskCanDo == "Y") {
                                 return '可做'
                             }
                         }

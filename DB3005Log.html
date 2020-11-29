@@ -144,8 +144,16 @@
                         title: 'PLC类型'
                     },
                     {
+                        field: 'Type',
+                        templet:function (res) {
+                             if(res.Type=="Write"){return '写'}
+                             if(res.Type=="Read"){return '读'}},
+                        width: 80,
+                        title: '读/写'
+                    },
+                    {
                         field: 'DB5Detail',
-                        width: 853,
+                        width: 773,
                         title: 'DB值'
                     },
                     {

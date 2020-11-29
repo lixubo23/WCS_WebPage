@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html class="x-admin-sm">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <!--<meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />-->
+    <link rel="stylesheet" href="./css/font.css">
+    <link rel="stylesheet" href="./css/xadmin.css">
+    <script src="./lib/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./js/xadmin.js"></script>
+    <title style="float: left; ">创建用户</title>
+</head>
+
+<body>
+    <div class="x-nav">
+        <span class="layui-breadcrumb">
+            <a href="">首页</a>
+            <a href="">系统管理</a>
+            <a><cite>权限管理</cite></a>
+        </span>
+        <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right"
+            onclick="location.reload()" title="刷新">
+            <i class="layui-icon layui-icon-refresh" style="line-height:30px"></i>
+        </a>
+    </div>
+    <div class="layui-fluid">
+        <div class="layui-row layui-col-space15">
+            <div class="layui-col-md12">
+                <div class="layui-card">
+                    <div class="layui-card-body ">
+                        <h1 style="line-height: 24px;font-size: 18px;color: #303133;">添加用户</h1>
+                        <div style="clear: both;"></div>
+                        <label style="float: left;font-size: 14px;color: #606266;margin-top: 10px;font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Arial,sans-serif;">用户</label>
+                        <input type="text" style ="margin-top: 10px;">
+                        <div style="clear: both;"></div>
+                        <label style="float: left;font-size: 14px;color: #606266;margin-top: 10px;font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Arial,sans-serif;">描述</label>
+                        <input type="text" style ="margin-top: 10px;">
+                        <div class="layui-btn-container" style="margin-top: 10px;">
+                            <button type="button" class="layui-btn layui-btn-sm" lay-demo="getChecked">获取选中节点数据</button>
+                            <button type="button" class="layui-btn layui-btn-sm" lay-demo="setChecked">勾选指定节点</button>
+                            <button type="button" class="layui-btn layui-btn-sm" lay-demo="reload">重载实例</button>
+                        </div>
+                        <div id="test12" class="demo-tree-more"></div>
+                        <div class="layui-btn-container" style="margin-top: 10px;">
+                            <button type="button" class="layui-btn layui-btn-sm" lay-demo="getChecked" style="margin-left: 200px;">取消</button>
+                            <button type="button" class="layui-btn layui-btn-sm" lay-demo="setChecked">确认</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    layui.use(['tree', 'util'], function () {
+        var tree = layui.tree,
+            layer = layui.layer,
+            util = layui.util
+
+            //模拟数据
+            ,
+            data = [{
+                    title: 'WCS任务',
+                    id: 1,
+                    field: 'name1',
+                    checked: false,
+                    spread: false,
+                    children: [{
+                            title: '输送机当前任务',
+                            id: 3,
+                            field: 'name11',
+                            href: 'https://www.layui.com/'
+                        },
+                        {
+                            title: '堆垛机当前任务',
+                            id: 4,
+                            spread: false
+                        }
+                    ]
+                },
+                {
+                    title: 'WCS日志',
+                    id: 2,
+                    field: '',
+                    spread: false,
+                    children: [{
+                        title: 'WMS->WCS',
+                        id: 5,
+                        field: '',
+                        spread: true
+                    }, {
+                        title: 'WCS->WMS',
+                        id: 6,
+                        field: '',
+                        spread: true
+                    }, {
+                        title: 'WCS->PLCDB3004',
+                        id: 7,
+                        field: '',
+                        spread: true
+                    }, {
+                        title: 'PLCDB3005->WCS',
+                        id: 8,
+                        field: '',
+                        spread: true
+                    }, {
+                        title: 'PLCDB3006->WCS',
+                        id: 9,
+                        field: '',
+                        spread: true
+                    }]
+                },
+                {
+                    title: 'WCS信息',
+                    id: 3,
+                    field: '',
+                    children: [{
+                        title: 'PLC配置信息',
+                        id: 10,
+                        field: '',
+                        fixed: true
+                    }, {
+                        title: '输送机地址信息',
+                        id: 11,
+                        field: ''
+                    }, {
+                        title: '立体库货位表',
+                        id: 12,
+                        field: ''
+                    }]
+                },
+                {
+                    title: '系统管理',
+                    id: 4,
+                    field: '',
+                    children: [{
+                        title: '用户管理',
+                        id: 13,
+                        field: '',
+                        fixed: true
+                    }, {
+                        title: '角色管理',
+                        id: 14,
+                        field: ''
+                    }, {
+                        title: '菜单管理',
+                        id: 15,
+                        field: ''
+                    }, {
+                        title: '权限管理',
+                        id: 16,
+                        field: ''
+                    }, {
+                        title: '登录日志',
+                        id: 17,
+                        field: ''
+                    }, {
+                        title: '操作日志',
+                        id: 18,
+                        field: ''
+                    }]
+                }
+            ];
+        //基本演示
+        tree.render({
+            elem: '#test12',
+            data: data,
+            showCheckbox: true //是否显示复选框
+                ,
+            id: 'demoId1',
+            isJump: true //是否允许点击节点时弹出新窗口跳转
+                ,
+            click: function (obj) {
+                var data = obj.data; //获取当前点击的节点数据
+                layer.msg('状态：' + obj.state + '<br>节点数据：' + JSON.stringify(data));
+            }
+        });
+
+        //按钮事件
+        util.event('lay-demo', {
+            getChecked: function (othis) {
+                var checkedData = tree.getChecked('demoId1'); //获取选中节点的数据
+
+                layer.alert(JSON.stringify(checkedData), {
+                    shade: 0
+                });
+                console.log(checkedData);
+            },
+            setChecked: function () {
+                tree.setChecked('demoId1', [12, 16]); //勾选指定节点
+            },
+            reload: function () {
+                //重载实例
+                tree.reload('demoId1', {
+
+                });
+
+            }
+        });
+
+    });
+</script>
+
+</html>
